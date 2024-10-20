@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+
+    <!-- connect external css -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- internal css -->
+    <style type="text/css">
+
+      /* tag selector  */
+      footer {
+        background-color: rebeccapurple;
+        height: 100px;
+        padding: 40px;
+      }
+
+      /* class selector  */
+      .text-style {
+        color: #0b65ec;
+      }
+
+      /* id selector */
+      #tag {
+        color: orange;
+      }
+
+
+
+      /* flot */
+
+      /*  
+      .continer-1{
+        float: left;
+      }
+
+      .continer-2{
+        float: right;  // see what happen if we do float:left
+      }
+
+      .clear-float{
+        clear: both;
+      } */
+
+
+
+      /* positioning */
+
+      /* relative - make the item relative to its original position */
+      /* .continer-1{
+        position: relative;
+        left: -50px;
+        top: 10px;
+        z-index: 1;
+      }
+
+      .continer-2{
+        height: 200px;
+        position: relative;
+        left: 100px;
+        top: -10px; */
+
+      /* the z-index of continer-2 is heigher that why its apper on top os continer-1 */
+      /* z-index: 2;  */
+
+      /* opacticity to show the below element (range - 0 to 1) */
+      /* 
+          opacity: 1  -- means completely solid
+          opacity: 0 -- means completely  invisible
+        */
+      /* opacity: 0.6;
+       }  */
+
+
+
+      /* Absolute - take element on top of other element */
+      /* .continer-1{
+        position: absolute;
+        left: 50px;
+        top: 50px;
+      }
+      .continer-2{
+        height: 2000px;
+      } */
+
+
+
+      /* Fixed - same as absolute but do not overflow element will be fixed on the same positio even if we scroll down */
+      /* .continer-1{
+        position: fixed;
+        left: 20px;
+        top: 20px;
+      }
+      .continer-2{
+        height: 2000px;
+      } */
+
+
+
+      /* Sticky - same as Fixed but initally behaive as relative means the element below it will not move upwards as (fixed and absolut) */
+      /* .continer-1{
+        position: sticky;
+        top: 20px;
+        left: 20px;
+      }
+
+      .continer-2{
+        height: 2000px;
+      } */
+
+
+      /* Static - Its default positioning */
+
+
+
+      /* Border */
+      #border-1 {
+        height: 200px;
+        background-color: red;
+        width: 200px;
+        margin: 10px;
+        text-align: center;
+        display: flex;
+        justify-content: center; /* Centers content horizontally */
+        align-items: center; /* Centers content vertically */
+        color: white;
+        border: 3px dotted yellow ;
+      }
+      #border-2 {
+        height: 200px;
+        background-color: blue;
+        width: 200px;
+        margin: 10px;
+        text-align: center;
+        display: flex;
+        justify-content: center; 
+        align-items: center;
+        color: white;
+        border: 3px orange ridge ;
+        border-top-right-radius: 20px ;
+        border-bottom-left-radius: 20px;
+      }
+      #border-3 {
+        height: 200px;
+        background-color: green;
+        width: 200px;
+        margin: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        border: 5px orchid;
+        border-style: ridge groove dotted solid;
+      }
+
+
+
+      
+      /* Fonts */
+
+      /* google font */
+      .shadows-into-light-regular {
+        /* fallback if "Shadow Into Light" not present it will go to cursive and so on  */
+        font-family: "Shadows Into Light", cursive;
+        font-weight: bold;
+        font-style: italic;
+        font-size: 30px;
+      }
+
+
+
+
+      /* Advance selector */
+
+      /* Select all the <p> tag inside the div */
+      div p.green {
+        color: red; 
+      }
+
+      div p{
+        color: blueviolet;
+      }
+
+      /* select all the a tag with target */
+      a[target]{
+        color: green;
+      }
+      
+      /* select all a  only with the particular href (i.e "https://google.com" )  */
+      a[href="https://google.com"]{
+        font-size: 20px;
+        font-style: italic;
+      }
+
+
+
+
+
+      /* In CSS3  pseduo classes are used in single (:) and pseduo elemenet are used in (::) */
+
+      /* Pseudo classes */
+      .hover-class{
+        background-color: orange;
+        height: 100px;
+        width: 200px;
+        margin: 10px;
+      } 
+      .hover-class:hover{
+        /* horizontal | vertical | spreed-radius | color */
+        box-shadow: 5px 5px 5px rgb(177, 176, 176);
+        border-top-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+
+      input:enabled{
+        background-color: green;
+      }
+
+      input:focus{
+        background-color: yellow;
+      }
+
+      input:disabled{
+        background-color: red;
+      }
+
+      input:checked{
+        box-shadow: 5px 5px 5px rgb(93, 90, 90);
+      }
+
+      /* select the first <p> child in each div */
+      p:first-child{
+        font-size: 30px;
+      }
+
+      /* select the last p of each div */
+      P:last-child{
+        font-size: 20px;
+      }
+
+      /* The :only-child CSS pseudo-class represents an element without any siblings. ( only p tag in div not other )  */
+      p:only-child{
+        font-style: italic;
+      }
+
+      /*  */
+      p:first-of-type{
+        text-decoration: underline;
+      }
+
+      /* last-of-type and only-of-type */
+
+
+      /* select even rows */
+      tr:nth-child(2n){
+        background-color: rgb(38, 38, 38);
+      }
+
+      /* select odd rows */
+      tr:nth-child(2n-1){
+        background-color: rgb(64, 106, 0);
+      }
+
+      /* nth-last-child - count backwards 
+         p:nth-of-type - only count a certain type (count only <p> type element)
+      */  
+
+
+      /* hide empty divs */
+      div:empty{
+        display: none;
+      }
+
+
+      /* select the p tag which are not of class green */
+      p:not(.green){
+        font-weight: bold;
+      }
+
+      /* select all the tags which are not div  */
+      /* :not(div){
+        box-shadow: 3px 3px 3px rgb(243, 243, 243);
+      } */
+
+      p:first-letter{
+        font-size: 30px;
+      }
+
+
+
+
+
+      /* Pseudo  Elemenet */
+
+      .pseduo-elemenet-p::first-line{
+        color: #ff0000;
+        font-variant: small-caps;
+      }
+
+      /* Pseudo-elements can be combined with HTML classes:   */
+      p.pseduo-elemenet-p::first-letter{
+        color: black;
+       font-size: xx-large;
+      }
+
+      /* add some content before the selected tag */
+      h1.pseduo-elemenet-h1::before{
+        content: "Note: "; 
+        color: goldenrod
+      }
+
+      /* add some content after the selected tag */
+      h1::after{
+        content: " : Note End";
+      }
+
+      /* The ::marker pseudo-element selects the markers of list items. */
+      ::marker { 
+        color: red;
+        font-size: 23px;
+      }
+
+      /* ::selection pseudo-element matches the portion of an element that is selected by a user. */
+      h1::selection{
+        color: red;
+        background: yellow;
+      }
+
+
+
+
+      /* Grident  */
+      #grident{
+        height: 200px;
+        width: 200px;
+        background: linear-gradient(white,blue,red,green);
+
+      }
+
+
+      /* text shadow */
+      #shadow{
+        text-shadow: 3px 3px 3px red;
+        color: white;
+      }
+
+
+      /* transformation and animation  */
+
+      #box{
+        width: 100px;
+        height: 100px;
+        background-color: green;
+        border-radius: 10px;
+        margin: 100px;
+        transition: 0.5s ease-in-out;
+        font-family: "arial";
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 200%;
+      }
+
+      #box:hover{
+          
+        /* change position */
+        /* right | down */ 
+        /* transform: translate(50px,50px); */
+         
+
+        /* rotate */
+         /* transform: rotate(50deg); */
+
+
+         /* scale */
+         /* width | height */
+         /* transform: scale(2,1); */
+
+         /* skew */
+        /* transform: skew(20deg,10deg);*/
+
+
+        /* 3d transformation */
+        /* transform: rotate(180deg); */
+        /* transform: rotateY(180deg); */
+        transform: rotateZ(180deg);
+
+      }
+
+
+    </style>
+  </head>
+  <body>
+
+    <!-- For positioning -->
+    <div
+      class="continer-1"
+      style="background-color: orange; width: 300px; height: 200px"
+    >
+      <h1 class="text-style">This is Container 1</h1>
+    </div>
+
+    <div class="continer-2" style="background-color: #0b65ec; width: 300px">
+      <h1 id="tag">This is Container</h1>
+    </div>
+
+    <!-- To avoid below <p> tag come between above tags we use this -->
+    <!-- <div class="clear-float"></div> -->
+
+    <!-- <p style="font-size: 30px;">This paragraph is not floated</p> -->
+
+
+    <!-- For Border  -->
+    <div style="display: flex;">
+
+      <div id="border-1">
+        <h1>This Red</h1>
+      </div>
+  
+      <div id="border-2">
+        <h1>This Blue</h1>
+      </div>
+  
+      <div id="border-3">
+        <h1>This Green</h1>
+      </div>
+
+    </div>
+
+
+    <!-- For Font -->
+    <p class="shadows-into-light-regular">This Some text for Font</p>
+
+
+    <!-- Text styling -->
+    <p style="font-weight: bold;font-size: 32px;">This is bold <span style="font-style: italic"> and Italic </span></p>
+    <p style="text-decoration: underline;">This is Underlined Setance</p>
+    <!-- stoping <a>  tag from decoration -->
+    <a style="text-decoration: none;" href="google.com" >This is link without underline</a>
+
+
+
+    <!-- Text alignment -->
+     <div style="width: 300px;height: 200px;background-color: greenyellow;color: orangered;">
+
+        <p style="text-align: center;">
+          This is Lorem text
+        </p>
+
+        <p style="text-align: justify;">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quia sunt reiciendis accusantium hic expedita delectus, id reprehenderit autem alias ipsum, officia nihil! At dignissimos modi quam, tempora autem libero!
+        </p>
+
+     </div>
+     
+
+
+
+     <!-- Advance selector -->
+
+     <div>
+
+      <p class="green">This is inside p-1</p>
+
+      <p>This is inside p-2</p>
+
+      <a target="_blank" href="google.com">This is Inside  link</a>
+
+     </div>
+
+     <p>This is Outside element</p>
+
+     <a  href="https://google.com">This is OutSide link</a>
+
+
+
+
+     <!-- Pseudo classes -->
+
+     <div class="hover-class">
+      This is Hover pseudo class
+     </div>
+
+      <input disabled>
+
+      <input >
+
+      <input type="checkbox">
+
+
+
+
+      <!-- Psedudo Element -->
+
+      <p style="width: 200px;" class="pseduo-elemenet-p">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+        Provident fugit doloremque ipsa cum cupiditate ratione veniam odio quasi maiores, sit reprehenderit error quis quidem numquam. 
+        Alias iure sunt explicabo ipsum.
+      </p>
+
+      <h1 class="pseduo-elemenet-h1">This is Psedudo Element H1</h1>
+
+      <ul>
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+      </ul>
+      
+      <ol>
+        <li>First</li>
+        <li>Second</li>
+        <li>Third</li>
+      </ol>
+
+
+
+      <!-- Grident -->
+
+      <div id="grident"></div>
+
+
+      <!-- Text shadow -->
+
+      <h1 id="shadow">This is text shadow</h1>
+
+
+
+      <!-- Transaformations and animation -->
+      <div id="box">
+        Box
+      </div>
+
+
+
+  </body>
+
+  <!-- Inline CSS -->
+  <footer>
+    <table style="border-collapse: collapse; width: 100%">
+      <thead>
+        <tr>
+          <th style="color: white; text-align: left; padding: 8px">Programs</th>
+          <th style="color: white; text-align: left; padding: 8px">Service</th>
+          <th style="color: white; text-align: left; padding: 8px">Contact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="color: rgb(198, 197, 197); padding: 8px">Corporate</td>
+          <td style="color: rgb(198, 197, 197); padding: 8px">One to One</td>
+          <td style="color: rgb(198, 197, 197); padding: 8px">
+            Information Technology
+          </td>
+        </tr>
+        <tr>
+          <td style="color: rgb(198, 197, 197); padding: 8px">Workshops</td>
+          <td style="color: rgb(198, 197, 197); padding: 8px">Consulting</td>
+          <td style="color: rgb(198, 197, 197); padding: 8px">
+            Business Support
+          </td>
+        </tr>
+        <tr>
+          <td style="color: rgb(198, 197, 197); padding: 8px">Training</td>
+          <td style="color: rgb(198, 197, 197); padding: 8px">Advisory</td>
+          <td style="color: rgb(198, 197, 197); padding: 8px">Customer Care</td>
+        </tr>
+      </tbody>
+    </table>
+  </footer>
+</html>

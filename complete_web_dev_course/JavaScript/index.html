@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav>
+      
+      <input type="text" id="search" placeholder="Search..." oninput="searchFunction()"/>
+
+      <div>
+        <select class="dropdown" onchange="sortCountries()">
+          <option value="name">Sort by Name</option>
+          <option value="population">Sort by Population</option>
+          <option value="region">Sort by Region</option>
+        </select>
+      
+        <select class="sort-order" onchange="toggleSortOrder()">
+          <option value="asc">Ascending</option>
+          <option value="desc">Descending</option>
+        </select>
+        
+      </div>
+
+    </nav>
+
+    <div style="display: flex;justify-content: center;align-content: center;">
+      <div  class="loading"></div>
+    </div>
+
+    <div class="card-body"></div>
+  </body>
+</html>
